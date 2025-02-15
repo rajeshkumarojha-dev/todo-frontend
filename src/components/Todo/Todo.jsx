@@ -13,7 +13,7 @@ const Todo = () => {
     }, [])
 
     const fetchData = async () => {
-        let response = await axios.get('http://127.0.0.1:8000/api/todo/')
+        let response = await axios.get('https://todo-backend-c2az.onrender.com/api/todo/')
         setTodo(response.data)
         console.log(response.data)
     }
@@ -25,7 +25,7 @@ const Todo = () => {
             await taskUpdate(editingId, newTodo);
 
         } else {
-            let response = await axios.post('http://127.0.0.1:8000/api/todo/', {
+            let response = await axios.post('https://todo-backend-c2az.onrender.com/api/todo/', {
                 task: newTodo,
                 complete: false
             });
@@ -36,7 +36,7 @@ const Todo = () => {
 
 
     const taskDelete = async (id) => {
-        await axios.delete(`http://127.0.0.1:8000/api/todo/${id}/`)
+        await axios.delete(`https://todo-backend-c2az.onrender.com/api/todo/${id}/`)
         let updateData = [...todo]
         updateData.splice(id, 1)
         setTodo(updateData)
@@ -44,7 +44,7 @@ const Todo = () => {
     }
 
     const taskUpdate = async (id, updatedTask) => {
-        await axios.put(`http://127.0.0.1:8000/api/todo/${id}/`, {
+        await axios.put(`https://todo-backend-c2az.onrender.com/api/todo/${id}/`, {
             task: updatedTask,
             complete: false
         });
