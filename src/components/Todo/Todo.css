@@ -73,3 +73,30 @@ button{
     background-color: azure;
     cursor: pointer;
 }
+
+.login-container, .register-container {
+    box-shadow: 0 0 20px black;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    margin: auto;
+}
+
+.login-container input, .register-container input {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.login-container button, .register-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: orangered;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}

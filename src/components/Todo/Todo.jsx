@@ -51,12 +51,18 @@ const Todo = () => {
         fetchData();
     };
 
+    const clearInput = () => {
+        setNewTodo('');
+        setEditingId(null);
+    };
+
     return (
         <div className='todo-container'>
             <div className="todo">
                 <h1>Todo App</h1>
                 <div className="form">
                     <input type="text" placeholder='Enter Todo' value={newTodo} onChange={(e) => setNewTodo(e.target.value)} />
+                    {editingId && <button type='button' className='clear-btn' onClick={clearInput}>✖</button>}
                     <button type='submit' className='form-btn' onClick={submitHandler}>Submit</button>
                 </div>
             </div>
